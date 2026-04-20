@@ -10,6 +10,7 @@ export class CdkStack extends cdk.Stack {
     new NodejsFunction(this, 'MyFunction', {
       runtime: Runtime.NODEJS_24_X,
       handler: 'handler',
+      depsLockFilePath: '../lambda/package-lock.json',
       entry: '../lambda/entry.js'
     })
   }
